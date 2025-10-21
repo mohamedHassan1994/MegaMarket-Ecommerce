@@ -81,7 +81,7 @@ This repo includes representative screenshots so contributors and reviewers can 
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/USERNAME/megamarket-ecommerce.git
+git clone https://github.com/mohamedHassan1994/megamarket-ecommerce.git
 cd megamarket-ecommerce
 ```
 
@@ -159,13 +159,4 @@ This project is released under the MIT License. See `LICENSE` for details.
 
 ## Contact
 
-Mohamed Hassan — `your-email@example.com` (replace with preferred contact)
-
----
-
-**Need me to**:
-
-* update screenshots into the README with exact file names you used, or
-* generate a compressed / web-ready version of each image and show sample commands?
-
-If yes, paste your image filenames (or upload them) and I’ll update the README image links accordingly.
+Mohamed Hassan — `mohamed.coord94@gmail.com`
