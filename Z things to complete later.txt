@@ -1,0 +1,2 @@
+reset password email image add it in store configuration
+stock decreased to 1 desktop notification image also add it in store configuration

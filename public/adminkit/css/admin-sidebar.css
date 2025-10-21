@@ -1,0 +1,156 @@
+Remove default bullets from all sidebar lists
+.sidebar ul,
+.sidebar li {
+  list-style: none !important;
+}
+
+/* admin-custom.css - clean collapse + icon swap */
+.header.show_menu {
+  cursor: pointer;
+  padding: 0.80rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.0rem;
+}
+
+.header.show_menu .plus {
+  transition: transform .25s ease, color .15s ease;
+  font-size: 2.00rem;
+  color: white;
+
+}
+
+#sidebar-order {
+    all: unset;            /* removes all default browser styles */
+    cursor: pointer;       /* optional: keep it clickable */
+    display: inline-block; /* so it behaves nicely inside span */
+}
+
+/* + to – effect */
+.plus.plus-change::before {
+  content: "-";
+}
+.plus::before {
+  content: "+";
+}
+
+/* slide_toggle uses max-height for smooth animation */
+.menu.slide_toggle {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 320ms ease;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* when open we add .open */
+.menu.slide_toggle.open {
+  max-height: 1000px;
+}
+
+/* spacing for submenu items */
+.menu.slide_toggle .sidebar-item { padding: 0; }
+.menu.slide_toggle .sidebar-link {
+  display: block;
+  padding: .8rem 1.5rem;
+  color: white;
+  font-size: .80rem;
+  font-weight: 100;
+  background-color: #283c52;
+}
+
+/* Sidebar link hover effect */
+.sidebar .sidebar-link:hover,
+.sidebar .header:hover {
+    background-color: #1e3247;/* adjust the value as you like */
+}
+
+/* active child link style */
+.sidebar-link.active {
+  font-weight: 600;
+  background-color: rgb(75 91 106);
+  color: rgba(255, 255, 255, 0.753);
+}
+
+/* ---------- Sidebar scroll area (robust) ---------- */
+#sidebar .simplebar,
+#sidebar .simplebar-wrapper,
+#sidebar .simplebar-content-wrapper,
+#sidebar .simplebar-content,
+#sidebar .simplebar-scroll-content {
+  height: 100% !important;
+  max-height: 100% !important;
+}
+
+/* make the content wrapper allow vertical scrolling */
+#sidebar .simplebar-content-wrapper {
+  overflow-y: auto !important;
+}
+
+/* keep submenu expansion from getting clipped by low max-heights */
+.menu.slide_toggle.open {
+  max-height: 9999px !important;
+}
+
+/* keep brand/header visible while the menu scrolls */
+.sidebar-brand {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: inherit;
+}
+
+/* optional: nicer WebKit scrollbar */
+#sidebar .sidebar-content::-webkit-scrollbar { width: 8px; }
+#sidebar .sidebar-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.18);
+  border-radius: 10px;
+}
+
+/* Sidebar scrollable area – use SimpleBar's content wrapper */
+#sidebar .simplebar-content-wrapper {
+  overflow-y: auto !important;      /* only when needed */
+  max-height: 100%;
+  scrollbar-width: thin;            /* Firefox */
+  scrollbar-color: #4b4b4b #e0e0e0; /* thumb | track */
+}
+
+/* Chrome / Edge / Safari */
+#sidebar .simplebar-content-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+#sidebar .simplebar-content-wrapper::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;   /* thumb color */
+  border-radius: 4px;
+}
+
+#sidebar .simplebar-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+#sidebar .simplebar-content-wrapper::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* ---------- Nested submenu toggle indicator inside links ---------- */
+.sidebar-link .plus {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* plus/minus for link-embedded toggles (keeps consistency with header .plus) */
+.sidebar-link .plus::before { content: "+"; }
+.sidebar-link .plus.plus-change::before { content: "-"; }
+
+/* slightly smaller icon for nested toggles on very small items (optional) */
+.menu.slide_toggle .sidebar-link .plus {
+  transition: transform .25s ease;
+  font-size: 1.80rem;
+  color: white }
+  
